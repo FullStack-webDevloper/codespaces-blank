@@ -1,84 +1,183 @@
-body{
+body {
     font-family: 'Plus Jakarta Sans', sans-serif !important;
 }
-.navbar{
-    height:5rem;
+.navbar {
+    height: 5rem;
     background-color: white;
 }
-.fa-compass{
-    color:#fe424d;
+
+/* Navbar compass icon */
+.fa-compass {
+    color: #fe424d;
     font-size: 2rem;
 }
-.navlink{
-    color: #222222, !important;
+
+/* Navbar link */
+.navlink {
+    color: #222222 !important;
     background-color: white;
 }
-.f-info-links a{
-    text-decoration:none;
-    color:#222222;
+
+/* Filter and links styling */
+.filter a,
+.f-info-links a {
+    text-decoration: none;
+    color: black;
 }
-.f-info-links a:hover{
-   text-decoration: underline;
+
+.f-info-links a:hover {
+    text-decoration: underline;
 }
-.f-info-links ,.f-info-socials,.f-info-brand{
+
+/* Footer info styling */
+.f-info-links,
+.f-info-socials,
+.f-info-brand {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.f-info-socials i{
+
+/* Social icons */
+.f-info-socials i {
     margin-right: 1rem;
     font-size: 1.2rem;
 }
-.f-info{
+
+.f-info {
     text-align: center;
     display: flex;
     height: 8rem;
     background-color: #ebebeb;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: space-evenly;
 }
-/*cards*/
-.listing-card{
+
+/* Listing cards */
+.listing-card {
     border: none !important;
     margin-bottom: 2rem;
-    
 }
-.card-img-top{
+
+.card-img-top {
     border-radius: 1rem !important;
-    width:100%;
+    width: 100%;
     object-fit: cover !important;
 }
-.card-body{
-    padding: 0 !important;
 
+.card-body {
+    padding: 0 !important;
 }
-.card-text p{
+
+.card-text p {
     font-weight: 400;
 }
-.listing-link{
+
+.listing-link {
     text-decoration: none;
 }
 
-/*card effect*/
-.card-img-overlay{
-opacity: 0;
+/* Card hover effect */
+.card-img-overlay {
+    opacity: 0;
 }
-.card-img-overlay:hover{
+
+.card-img-overlay:hover {
     opacity: 0.2;
     background-color: white;
 }
-/*show page*/
-.show-img{
+
+/* Show page image */
+.show-img {
     height: 30vh;
 }
-.btns{
-    display: flex;
 
+/* Button container */
+.btns {
+    display: flex;
 }
-/* map styling */
+
+/* Map styling */
 #map {
-     height: 400px;
-     width: 80vh;
-     }
+    height: 400px;
+    width: 80vw;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .f-info {
+        flex-direction: column;
+        height: auto;
+    }
+}
+
+@media (max-width: 992px) {
+    .navbar {
+        height: 4rem;
+    }
+
+    .fa-compass {
+        font-size: 1.5rem;
+    }
+
+    .f-info,
+    .f-info-links,
+    .f-info-socials,
+    .f-info-brand {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    #map {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        height: 3.5rem;
+    }
+
+    .listing-card {
+        margin-bottom: 1.5rem;
+    }
+
+    .show-img {
+        height: 25vh;
+    }
+
+    #map {
+        height: 300px;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar {
+        height: 3rem;
+    }
+
+    .fa-compass {
+        font-size: 1.2rem;
+    }
+
+    .show-img {
+        height: 20vh;
+    }
+
+    #map {
+        height: 250px;
+    }
+
+    .btns {
+        flex-direction: column;
+    }
+
+    .f-info-links,
+    .f-info-socials,
+    .f-info-brand {
+        flex-direction: column;
+        padding: 0.5rem;
+    }
+}

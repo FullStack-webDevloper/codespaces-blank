@@ -4,10 +4,21 @@ const mapToken=process.env.MAP_TOKEN;
 const geocodingClient =mbxGeocoding({accessToken:mapToken});
 
 
-module.exports.index=async(req, res)=>{
-    const allListings=await Listing.find({});
-    res.render("listings/index.ejs",{ allListings });
-     };
+module.exports.index = async (req, res) => {
+    try {
+        const { category } = req.query;
+        
+        // If a category is provided, filter listings by category; otherwise, fetch all listings
+        const filter = category ? { category } : {};
+        const listings = await Listing.find(filter);
+
+        res.render("listings/index.ejs", { listings });
+    } catch (error) {
+        console.error("Error fetching listings:", error);
+        res.status(500).json({ error: "Failed to fetch listings" });
+    }
+};
+
 
      module.exports.renderNewForm =( req , res )=>{
     
@@ -41,7 +52,7 @@ module.exports.index=async(req, res)=>{
         newListing.image={url,filename};
 
         newListing.geometry=response.body.features[0].geometry;
-        
+        newListing.category = req.body.listing.category;
        let savedListing= await newListing.save();
        console.log(savedListing); 
        req.flash("success","New Listing Created");

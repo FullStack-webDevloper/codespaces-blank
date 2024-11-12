@@ -22,6 +22,26 @@
         <input name="listing[image]" placeholder="enter image URL/Link" type="text"class="form-control">
         
     </div> -->
+    
+
+    <!-- Dropdown for selecting category -->
+     <div class="mb-3">
+      <label for="category">Category:</label>
+      <select class="form-label" name="listing[category]" id="category" required>
+          <option value="" disabled selected>Select a category</option>
+          <option value="Trending">Trending</option>
+          <option value="Iconic Cities">Iconic Cities</option>
+          <option value="Rooms">Rooms</option>
+          <option value="Mountains">Mountains</option>
+          <option value="Amazing Pools">Amazing Pools</option>
+      </select>
+      
+     </div>
+    
+
+      
+      <br>
+      <br>
     <div class="mb-3">
         <label for="image" class="form-label">Upload a Image</label>
         <input name="listing[image]"  type="file"class="form-control" required>
